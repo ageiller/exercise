@@ -5,6 +5,15 @@
 \usepackage{booktabs,caption}
 \usepackage[flushleft]{threeparttable}
 \usepackage{graphicx}
+\usepackage[
+    backend=biber,
+    style=bwl-FU,
+    url=false,
+    doi=false,
+    eprint=false
+]{biblatex}
+\addbibresource{name.bib}
+
 
 \title{Article}
 \author{Antoine Geiller}
@@ -23,9 +32,11 @@
 
 \section{Introduction}
 
-\blindtext[6]
+\blindtext[5]
+\cite{Anat}
+\cite{factor}
 
-\begin{table}
+\begin{table}[h]
 \centering
   \begin{threeparttable}
     \caption{Sample ANOVA table}
@@ -57,5 +68,8 @@
   \label{fig:blah1}
 \end{minipage}
 \end{figure}
+
+\section{Bibliography}
+\printbibliography
 
 \end{document}
