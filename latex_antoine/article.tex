@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{blindtext}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[
+    backend=biber,
+    style=bwl-FU,
+    url=false,
+    doi=false,
+    eprint=false
+]{biblatex}
+\addbibresource{name.bib}
+
+
+\title{Article}
+\author{Antoine Geiller}
+\affil{TeX.SX}
+\date{October 2021}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    abstract-text\footnote{footnotes working fine}
+\end{abstract}
+
+
+\section{Introduction}
+
+\blindtext[5]
+\cite{Anat}
+\cite{factor}
+
+\begin{table}[h]
+\centering
+  \begin{threeparttable}
+    \caption{Sample ANOVA table}
+     \begin{tabular}{lllll}
+        \toprule
+        Stubhead & \( df \) & \( f \) & \( \eta \) & \( p \) \\
+        \midrule
+                 &     \multicolumn{4}{c}{Spanning text}     \\
+        Row 1    & 1        & 0.67    & 0.55       & 0.41    \\
+        Row 2    & 2        & 0.02    & 0.01       & 0.39    \\
+        Row 3    & 3        & 0.15    & 0.33       & 0.34    \\
+        Row 4    & 4        & 1.00    & 0.76       & 0.54    \\
+        \bottomrule
+     \end{tabular}
+    \begin{tablenotes}
+      \small
+      \item This is where authors provide additional information about
+      the data, including whatever notes are needed.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+\begin{figure}[htp]
+\begin{minipage}[b]{0.99\linewidth}
+  \centering
+  \includegraphics[scale=0.40]{chart.pdf}
+  \caption{Portfolio returns.}
+  \label{fig:blah1}
+\end{minipage}
+\end{figure}
+
+\section{Bibliography}
+\printbibliography
+
+\end{document}
